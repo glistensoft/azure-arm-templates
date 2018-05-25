@@ -327,38 +327,38 @@
 		"enableHttp2": true
       },
 	  "resources": [
-	{
-      "type": "providers/diagnosticSettings",
-      "name": "[concat('Microsoft.Insights/',parameters('settingName'))]",
-      "apiVersion": "2017-05-01-preview",
-	  "location": "[parameters('location')]",
-	  "dependsOn": [ "[variables('applicationGatewayName')]" ],
-      "properties": {
-        "name": "[parameters('settingName')]",
-        "storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', variables('waflogstorage'))]",
-        "logs": [
-          {
-            "category": "ApplicationGatewayAccessLog",
-            "enabled": true,
-            "retentionPolicy": {
-              "days": 0,
-              "enabled": false
-            }
-          },
-          {
-            "category": "ApplicationGatewayFirewallLog",
-            "enabled": true,
-            "retentionPolicy": {
-              "days": 0,
-              "enabled": false
-            }
+	    {
+          "type": "providers/diagnosticSettings",
+          "name": "[concat('Microsoft.Insights/',parameters('settingName'))]",
+          "apiVersion": "2017-05-01-preview",
+	      "location": "[parameters('location')]",
+	      "dependsOn": [ 
+		    "[variables('applicationGatewayName')]" 
+		  ],
+          "properties": {
+            "name": "[parameters('settingName')]",
+            "storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', variables('waflogstorage'))]",
+            "logs": [
+              {
+                "category": "ApplicationGatewayAccessLog",
+                "enabled": true,
+                "retentionPolicy": {
+                  "days": 0,
+                  "enabled": false
+                }
+              },
+              {
+                "category": "ApplicationGatewayFirewallLog",
+                "enabled": true,
+                "retentionPolicy": {
+                  "days": 0,
+                  "enabled": false
+                }
+              }
+            ]
           }
-        ]
-      }
-    }
-
+        }
 	  ]
-	
 	}
   ]
 }
