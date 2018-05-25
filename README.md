@@ -28,4 +28,6 @@ PS D:\Azure\ARMTemplates> .\azure-run.ps1 -envPrefix Demo6 -username glisten -pa
      Arguments: envPrefix - Prefix for objects getting created in Azure
                 username  - Username to login into webapp (Mandatory)
                 password  - Password to login into webapp (Mandatory). It needs to meet complexity requirement of Azure. Currently no complexity checks implemented.
-                
+
+Each of the tasks configured in the powershell script can be executed independently with needful arguments.
+
