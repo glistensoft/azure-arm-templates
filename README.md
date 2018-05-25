@@ -24,6 +24,7 @@ PS D:\Azure\ARMTemplates> Connect-AzureRmAccount
 (3) Execute following command to create Azure resources described above:
 
 PS D:\Azure\ARMTemplates> .\azure-run.ps1 -envPrefix Demo6 -username glisten -password Gli20sten18
+
      Arguments: envPrefix - Prefix for objects getting created in Azure
                 username  - Username to login into webapp (Mandatory)
                 password  - Password to login into webapp (Mandatory). It needs to meet complexity requirement of Azure. Currently no complexity checks implemented.
